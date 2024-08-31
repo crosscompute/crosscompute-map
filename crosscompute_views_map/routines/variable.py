@@ -36,6 +36,7 @@ class MapMapboxView(VariableView):
     css_texts = [MAP_CSS]
     js_uris = [MAPBOX_JS_URI, TURF_JS_URI]
 
+    # TODO: Define process_value vs process_path
     def process(self, path):
         with path.open('rt') as f:
             array = np.array(list(geojson.utils.coords(json.load(f))))
